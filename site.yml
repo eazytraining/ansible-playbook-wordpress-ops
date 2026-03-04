@@ -1,6 +1,6 @@
 ---
 - name: "Wordpress Ops Playbook"
-  hosts: wordpress_servers
+  hosts: staging
   become: true
   gather_facts: true
   roles:
