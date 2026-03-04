@@ -1,0 +1,7 @@
+---
+- name: "Wordpress Ops Playbook"
+  hosts: wordpress_servers
+  become: true
+  gather_facts: true
+  roles:
+    - wordpress_ops
