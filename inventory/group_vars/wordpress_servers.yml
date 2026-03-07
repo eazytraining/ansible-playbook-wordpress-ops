@@ -1,1 +1,22 @@
 ---
+# ── Docker 
+mysql_container: "eazy-wordpress-db-1"
+
+# ── Base de données
+# Ces variables correspondent aux MYSQL_* du .env Docker
+db_name: "{{ vault_mysql_database }}"
+db_user: "{{ vault_mysql_user }}"
+db_password: "{{ vault_mysql_password }}"
+db_root_password: "{{ vault_mysql_root_password }}"
+
+# ── Backup local
+backup_base_dir: "/opt/backups/wordpress"
+backup_retention_days: 7
+
+# ── Amazon S3
+s3_enabled: true
+s3_bucket: "wordpress-backups-module3"
+s3_region: "us-east-1"
+s3_prefix: "wordpress"
+aws_access_key: "{{ vault_aws_access_key | default('') }}"
+aws_secret_key: "{{ vault_aws_secret_key | default('') }}"
