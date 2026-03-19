@@ -42,3 +42,7 @@ plugins_to_update:
   
 #unique plugin 
 plugin_uninstall_name: "wordpress-seo"
+
+# restore db
+restore_db_file: "/opt/backups/wordpress/database/wordpress_db_2026-03-19-044008.sql"
+restore_files_archive: "/opt/backups/wordpress/files/wordpress_files_2026-03-19-044008.tar.gz"
