@@ -22,3 +22,11 @@ s3_region: "us-east-1"
 s3_prefix: "wordpress"
 aws_access_key: "{{ vault_aws_access_key | default('') }}"
 aws_secret_key: "{{ vault_aws_secret_key | default('') }}"
+
+#plugins_to_install:
+plugin_install_name: "contact-form-7"
+plugin_install_version: "5.9.2"
+
+#manage plugin 
+plugin_name: "akismet"
+plugin_action: "deactivate"  # options: activate, deactivate, delete
