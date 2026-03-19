@@ -24,9 +24,21 @@ aws_access_key: "{{ vault_aws_access_key | default('') }}"
 aws_secret_key: "{{ vault_aws_secret_key | default('') }}"
 
 #plugins_to_install:
-plugin_install_name: "contact-form-7"
+plugin_install_name: "wordpress-seo"
 plugin_install_version: "5.9.2"
 
 #manage plugin 
-plugin_name: "akismet"
+plugin_name: "wordpress-seo"
 plugin_action: "deactivate"  # options: activate, deactivate, delete
+
+#plugin update
+plugins_to_update:
+  - name: "contact-form-7"
+    version: "5.7.7"
+  - name: "woocommerce"
+    version: "3.9.4"
+  - name: "wordpress-seo"
+    version: "19.9"
+  
+#unique plugin 
+plugin_uninstall_name: "wordpress-seo"
