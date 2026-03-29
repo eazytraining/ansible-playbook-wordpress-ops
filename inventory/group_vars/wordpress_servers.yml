@@ -29,7 +29,7 @@ plugin_install_version: "5.9.2"
 
 #manage plugin 
 plugin_name: "wordpress-seo"
-plugin_action: "deactivate"  # options: activate, deactivate, delete
+plugin_action: "activate"  # options: activate, deactivate, delete
 
 #plugin update
 plugins_to_update:
