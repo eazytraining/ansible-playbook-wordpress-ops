@@ -1,6 +1,6 @@
 ---
 roles:
   - name: wordpress_ops
-    src: https://{{ token_github }}:x-oauth-basic@github.com/eazytraining/ansible-role-wordpress-ops.git
+    src: https://github.com/eazytraining/ansible-role-wordpress-ops.git
     scm: git
     version: dev
