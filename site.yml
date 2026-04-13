@@ -1,0 +1,9 @@
+---
+- name: "Wordpress Ops Playbook"
+  hosts: staging
+  become: true
+  gather_facts: true
+  vars_files:
+    - inventory/group_vars/vault.yml
+  roles:
+    - wordpress_ops

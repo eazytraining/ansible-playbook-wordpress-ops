@@ -1,0 +1,48 @@
+---
+# ── Docker 
+mysql_container: "eazy-wordpress-db-1"
+wordpress_container: "eazy-wordpress-wordpress-1"
+wordpress_root: "/var/www/html"
+
+# ── Base de données
+# Ces variables correspondent aux MYSQL_* du .env Docker
+db_name: "{{ vault_mysql_database }}"
+db_user: "{{ vault_mysql_user }}"
+db_password: "{{ vault_mysql_password }}"
+db_root_password: "{{ vault_mysql_root_password }}"
+
+# ── Backup local
+backup_base_dir: "/opt/backups/wordpress"
+backup_retention_days: 7
+
+# ── Amazon S3
+s3_enabled: true
+s3_bucket: "wordpress-backups-module3"
+s3_region: "us-east-1"
+s3_prefix: "wordpress"
+aws_access_key: "{{ vault_aws_access_key | default('') }}"
+aws_secret_key: "{{ vault_aws_secret_key | default('') }}"
+
+#plugins_to_install:
+plugin_install_name: "wordpress-seo"
+plugin_install_version: "5.9.2"
+
+#manage plugin 
+plugin_name: "wordpress-seo"
+plugin_action: "deactivate"  # options: activate, deactivate, delete
+
+#plugin update
+plugins_to_update:
+  - name: "contact-form-7"
+    version: "5.7.7"
+  - name: "woocommerce"
+    version: "3.9.4"
+  - name: "wordpress-seo"
+    version: "19.9"
+  
+#unique plugin 
+plugin_uninstall_name: "wordpress-seo"
+
+# restore db
+restore_db_file: "/opt/backups/wordpress/database/wordpress_db_2026-03-19-044008.sql"
+restore_files_archive: "/opt/backups/wordpress/files/wordpress_files_2026-03-19-044008.tar.gz"
